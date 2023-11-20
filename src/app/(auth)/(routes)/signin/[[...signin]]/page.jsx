@@ -16,6 +16,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { useFormik } from "formik"
 import * as Y from "yup"
 import { toast } from 'react-toastify';
+import { motion } from 'framer-motion';
 import { redirect } from "next/navigation";
 
 const initialValues = {
@@ -45,14 +46,26 @@ const Page = () => {
   })
   return (
     <>
-      <div className="aitr_SignInBox" style={{ backgroundImage: "url(/Images/acropolis.jpg)", backgroundPosition: "center", objectFit: "cover", backgroundSize: "cover" }}>
+      <div className="aitr_SignInBox">
         <div className="aitr_SignInFormWrapper">
           <div className="aitr_SignInForm">
             <form onSubmit={handleSubmit}>
-              <Card className="sm:w-[350px] mx-2 bg-slate-50/40">
+              <Card className="sm:w-[350px] mx-2 bg-gray-900 border-transparent text-white">
                 <CardHeader className="text-center">
-                  <CardTitle>Acropolis FCA</CardTitle>
-                  <CardDescription className="text-gray-900">Manage all your acropolians data.</CardDescription>
+                  <CardTitle className="flex justify-center items-center">Acropolis FCA 
+                      <motion.img
+                        animate={{ rotate: [0, 15, 0] }}
+                        transition={{
+                          ease: "easeInOut",
+                          duration: 1,
+                          repeat: Infinity,
+                        }}
+                        className="loginSM:h-8 ml-2 h-[1.5rem] mt-1 loginSM:mt-0"
+                        src={"/images/waving-hand.png"}
+                        alt="waving Hand"
+                      />
+                  </CardTitle>
+                  <CardDescription className="text-white/50">Manage all your acropolians data.</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <div className="grid w-full items-center gap-4">
@@ -67,13 +80,13 @@ const Page = () => {
                         <p className="aitr_error">{errors.password}</p>
                       </div>
                       <div className="flex">
-                        <Checkbox id="rememberMe" name="rememberme" className="mr-1" />
+                        <Checkbox id="rememberMe" name="rememberme" className="mr-1 border-white" />
                         <Label htmlFor="rememberMe" className="cursor-pointer">Remember me</Label>
                       </div>
                     </div>
                 </CardContent>
                 <CardFooter className="flex justify-between">
-                  <Button className="w-full" type="submit">Sign In <FaArrowRightLong className="ml-1 "/></Button>
+                  <Button className="w-full bg-gray-600 hover:bg-gray-700" type="submit">Sign In <FaArrowRightLong className="ml-1 "/></Button>
                 </CardFooter>
               </Card>
             </form>

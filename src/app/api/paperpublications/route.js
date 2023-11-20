@@ -27,24 +27,24 @@ export async function POST(request) {
             publisher,
         } = body
 
-        console.log(nameOfFaculty,
-            authEmail,
-            department,
-            phoneNo,
+        // console.log(nameOfFaculty,
+        //     authEmail,
+        //     department,
+        //     phoneNo,
 
-            title,
-            subTitle,
-            keywords,
-            publicationDate,
-            sourceORJournalName,
-            volume,
-            issue,
-            DOI,
-            URL,
-            ISBN,
-            ISSN,
-            webTitle,
-            publisher);
+        //     title,
+        //     subTitle,
+        //     keywords,
+        //     publicationDate,
+        //     sourceORJournalName,
+        //     volume,
+        //     issue,
+        //     DOI,
+        //     URL,
+        //     ISBN,
+        //     ISSN,
+        //     webTitle,
+        //     publisher);
         if(nameOfFaculty != "" || authEmail != "" ||department != "" ||phoneNo != "" || title != "" || subTitle != "" || keywords != "" || publicationDate != "" || sourceORJournalName != "" || volume != "" || issue != "" || DOI != "" || URL != "" || ISBN != "" || ISSN != "" || publisher != "" || webTitle != ""){
             const checkData = await paperpublications.findOne({ISSN});
             if(checkData){
@@ -53,6 +53,14 @@ export async function POST(request) {
                     message: "ISSN No. already exist.",
                 }, {status: 400})
             } else {
+
+                let citation;
+
+                let name = nameOfFaculty.split(" ");
+                let firstNameFirstChar = name[0][0];
+                let lastName = name[1]
+
+                citation = `${firstNameFirstChar}. ${lastName}. "${title}" ${webTitle}. ${URL} [accessed ${publicationDate}]`
 
                 const newPaperpublications = new paperpublications({
                     nameOfFaculty,
@@ -72,7 +80,8 @@ export async function POST(request) {
                     ISBN,
                     ISSN,
                     webTitle,
-                    publisher
+                    publisher,
+                    citation
                 })
                 
                 const savedData = await newPaperpublications.save()

@@ -71,6 +71,10 @@ const paperPublications = new mongoose.Schema({
         type: String,
         required: [true, "Please Enter the publisher."],
     },
+    citation: {
+        type: String,
+        required: [true, "Please Enter the citation."],
+    },
 
 
     

@@ -26,6 +26,7 @@ import { useFormik } from "formik"
 import * as Y from "yup"
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import Footer from '@/components/footer';
   
 const initialValues = {
     nameOfFaculty: "",
@@ -301,12 +302,7 @@ const Page = () => {
                     <TableHeader>
                         <TableRow>
                             <TableHead className="w-[100px]">#</TableHead>
-                            <TableHead>Name</TableHead>
-                            <TableHead>Stream</TableHead>
-                            <TableHead>Topic</TableHead>
-                            <TableHead>Research Event</TableHead>
-                            <TableHead>ISSN No.</TableHead>
-                            <TableHead>Link</TableHead>
+                            <TableHead>Citation</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -317,12 +313,7 @@ const Page = () => {
                                             <>
                                                 <TableRow>
                                                     <TableCell>{i+1}</TableCell>
-                                                    <TableCell>{paperD.nameOfFaculty}</TableCell>
-                                                    <TableCell className="uppercase">{paperD.stream}</TableCell>
-                                                    <TableCell>{paperD.topic}</TableCell>
-                                                    <TableCell className="capitalize">{paperD.researchEvent}</TableCell>
-                                                    <TableCell>{paperD.issnNo}</TableCell>
-                                                    <TableCell>{paperD.linkD}</TableCell>
+                                                    <TableCell>{paperD.citation}</TableCell>
                                                 </TableRow>
                                             </>
                                         )
@@ -330,11 +321,6 @@ const Page = () => {
                                 ) : (
                                     <>
                                         <TableRow>
-                                            <TableCell>loading...</TableCell>
-                                            <TableCell>loading...</TableCell>
-                                            <TableCell>loading...</TableCell>
-                                            <TableCell>loading...</TableCell>
-                                            <TableCell>loading...</TableCell>
                                             <TableCell>loading...</TableCell>
                                             <TableCell>loading...</TableCell>
                                         </TableRow>
@@ -346,6 +332,7 @@ const Page = () => {
 
             </div>
         </div>
+        <Footer/>
     </>
   )
 }

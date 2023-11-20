@@ -75,16 +75,20 @@
   }
 }
 
+body{
+  @apply overflow-x-hidden
+}
+
 .aitr_SignInBox{
   @apply w-full h-[100vh] grid place-items-center;
 }
 
 .aitr_SignInFormWrapper{
-  @apply h-full w-full grid place-items-center bg-black/50 backdrop-blur-[2px]
+  @apply h-full w-full grid place-items-center bg-black/10 backdrop-blur-[2px]
 }
 
 .aitr_input{
-  @apply bg-slate-50/50 outline-none border-none ring-0 focus-visible:ring-white/20
+  @apply bg-transparent outline-none placeholder:text-white border-gray-300/40 text-white/60 ring-0 focus-visible:ring-white/20
 }
 
 .aitr_error{
