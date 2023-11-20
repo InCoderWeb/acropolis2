@@ -149,7 +149,7 @@ const Page = () => {
                         }} 
                         onKeyUp={(e) => {
                             const res = paperPublicationsData.filter(function(entry) {
-                                return entry.nameOfFaculty.toUpperCase().indexOf(e.target.value.toUpperCase()) !== -1;
+                                return entry.citation.toUpperCase().indexOf(e.target.value.toUpperCase()) !== -1;
                             });
                             console.log(res);
                             setFilteredData(res)
@@ -321,8 +321,8 @@ const Page = () => {
                                 ) : (
                                     <>
                                         <TableRow>
-                                            <TableCell>loading...</TableCell>
-                                            <TableCell>loading...</TableCell>
+                                            <TableCell>No Data Found</TableCell>
+                                            <TableCell>No Data Found</TableCell>
                                         </TableRow>
                                     </>
                                 )
