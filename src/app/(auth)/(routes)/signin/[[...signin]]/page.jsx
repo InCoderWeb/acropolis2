@@ -61,7 +61,7 @@ const Page = () => {
                           repeat: Infinity,
                         }}
                         className="loginSM:h-8 ml-2 h-[1.5rem] mt-1 loginSM:mt-0"
-                        src={"/images/waving-hand.png"}
+                        src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhoAddGmX9vTG5WO3j0cCZiaPqOTurVXwWx8LHav5_Iam1r_mGeQ2aOfO446inwNE9VUftmx0Aj3WpG_Ga46GelUVoy0F4_sCFtAehILLtD8PXYDSQuKcHCLQ8G9XR0Gi0hqufDDJhAbUiOUMPgF5xnXyGcTLk9-WZxGwu6R5fzO5AARMn1mNBl65v6ypOR/s1600/waving-hand.png"}
                         alt="waving Hand"
                       />
                   </CardTitle>
