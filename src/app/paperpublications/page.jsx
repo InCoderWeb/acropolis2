@@ -21,6 +21,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"  
+import { LuDownload } from "react-icons/lu";
 
 import { useFormik } from "formik"
 import * as Y from "yup"
@@ -303,6 +304,7 @@ const Page = () => {
                         <TableRow>
                             <TableHead className="w-[100px]">#</TableHead>
                             <TableHead>Citation</TableHead>
+                            <TableHead>Actions</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -314,6 +316,7 @@ const Page = () => {
                                                 <TableRow>
                                                     <TableCell>{i+1}</TableCell>
                                                     <TableCell>{paperD.citation}</TableCell>
+                                                    <TableCell><Button><LuDownload /></Button></TableCell>
                                                 </TableRow>
                                             </>
                                         )
